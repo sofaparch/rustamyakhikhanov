@@ -1,0 +1,422 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-scroll {
+  cursor: pointer;
+  font-size: 2.5em;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 1.5%;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: opacity, visibility, color;
+}
+
+.btn-scroll.active {
+  opacity: 1;
+  visibility: visible;
+}
+.btn-scroll:active {
+  color: red;
+}
+.btn-scroll:hover {
+  color: red;
+}
+
+
+
+
+
+@font-face {
+  font-family: "swiss911_xcm_btregular";
+  src: url("fonts/swiss911-webfont.woff2") format("woff2"),
+    url("fonts/swiss911-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("MyriadPro-Cond.eot");
+  src: local("Myriad Pro Condensed"), local("MyriadPro-Cond"),
+    url("fonts/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"),
+    url("fonts/MyriadPro-Cond.woff2") format("woff2"),
+    url("fonts/MyriadPro-Cond.woff") format("woff"),
+    url("fonts/MyriadPro-Cond.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad Pro Light";
+  src: url("MyriadPro-LightCond.eot");
+  src: local("Myriad Pro Light Condensed"), local("MyriadPro-LightCond"),
+    url("MyriadPro-LightCond.eot?#iefix") format("embedded-opentype"),
+    url("MyriadPro-LightCond.woff2") format("woff2"),
+    url("MyriadPro-LightCond.woff") format("woff"),
+    url("MyriadPro-LightCond.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.logo {
+  font-family: "swiss911_xcm_btregular";
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding-top: 20px;
+  text-decoration: none;
+  color: black;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-property: opacity, visibility, color;
+}
+.logo:hover {
+  color: red;
+}
+
+.menu {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.f1 {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+
+
+.about {
+  font-family: "Myriad Pro Light";
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  
+}
+
+.cr {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.mr {
+  font-family: "Myriad Pro Light";
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.mr1 {
+  font-family: "Myriad Pro Light";
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+
+
+.menu li a {
+  color: #000;
+  text-decoration: none;
+  align-self: center;
+  font-size: 20px;
+  padding: 40px, 40px;
+  transition: background 0.2s linear;
+  font-family: "Myriad Pro";
+}
+
+.menu_link {
+  position: relative;
+  color: #2f3030;
+  font-size: 1.25rem;
+}
+
+.menu_link:hover {
+  color: black;
+}
+
+.menu_link:hover:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  -o-transition: transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.menu_link:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  -o-transition: transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.menu li a.logo:hover {
+  color: black;
+}
+
+.menu li a.logo {
+  font-family: "swiss911_xcm_btregular";
+  font-size: 40px;
+  margin-right: 480px;
+}
+
+.menu li a.logo::before {
+  text-decoration: underline;
+}
+.wrapper {
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper_con {
+  padding: 0px 205px;
+  display: flex;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opis {
+  padding-top: 30px;
+  width: 850px;
+  text-align: left;
+  margin-right: 0px;
+}
+
+
+.image-sliderm{
+  width: 1000px;
+}
+.opiss {
+  padding-top: 30px;
+  width: 890px;
+  text-align: left;
+  margin-right: 0px;
+}
+.opisk {
+  padding-top: 30px;
+  width: 890px;
+  text-align: left;
+  margin-right: 32px;
+}
+.opiskl {
+  padding-top: 30px;
+  width: 1000px;
+  text-align: left;
+}
+
+
+
+.opisl {
+  padding-top: 30px;
+  width: 500px;
+  text-align: left;
+  margin-right: 32px;
+}
+.opisz {
+  padding-top: 30px;
+  width: 890px;
+  text-align: left;
+  margin-right: 0px;
+}
+.zag {
+  font-family: "Myriad Pro";
+  font-size: 45px;
+  padding-bottom: 20px;
+  width: 350px;
+}
+.zag1 {
+  font-family: "Myriad Pro";
+  font-size: 45px;
+  padding-bottom: 20px;
+  width: 320px;
+}
+
+.sgh {
+  font-family: "Myriad Pro Light";
+  font-size: 16px;
+  padding-bottom: 20 px;
+  width: 300px;
+  text-align: justify;
+}
+
+
+.pod {
+  padding-top: 10px;
+  text-align: left;
+  font-family: "Myriad Pro Light";
+  text-align: justify;
+}
+
+.image-slider__image {
+  text-align: center;
+}
+
+.image-slider__image img {
+  max-width: 100%;
+}
+
+/* Скролл */
+.image-slider .swiper-scrollbar-drag {
+  cursor: pointer;
+  background-color: black;
+}
+.image-slider .swiper-scrollbar-drag:hover {
+  background-color: red;
+}
+
+.image-slider__wrapper {
+  padding-bottom: 90px;
+}
+.image-sliderm__wrapper{
+
+padding-bottom: 90px;
+}
+.image-sliderr__wrapper {
+  padding-bottom: 90px;
+}
+.image-sliderl__wrapper {
+  padding-bottom: 90px;
+}
+
+.twot {
+  margin-top: 40px;
+}
+
+.rod {
+  width: 400px;
+}
+.rod2 {
+  width: 800px;
+}
+
+.pod1 {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  padding-top: 40px;
+}
+.pod11 {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+.pod12 {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  padding-top: 5px;
+  width: 300px;
+}
+.pod46 {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  
+  width: 300px;
+}
+
+.pod13 {
+  font-family: "Myriad Pro";
+  font-size: 25px;
+  padding-top: 40px;
+}
+
+.footer {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+.icont {
+  margin-top: 40px;
+}
+.icons_con {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.f2 {
+  font-family: "swiss911_xcm_btregular";
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.f2:hover {
+  color: red;
+}
+
+.yaz{
+  text-align: center;
+  margin-right: 15px;
+ 
+}
+.len{
+  font-family: "swiss911_xcm_btregular";
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
+}
+.lengf{
+  font-family: "swiss911_xcm_btregular";
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-bottom: 2px black solid;
+  color: black;
+
+}
+
+
